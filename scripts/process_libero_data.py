@@ -15,6 +15,36 @@ import adapt3r.env.libero.utils as lu
 
 from hydra.utils import instantiate
 
+
+"""
+
+keys after processed:
+
+data/demo_8
+data/demo_8/abs_actions
+data/demo_8/actions
+data/demo_8/obs
+data/demo_8/obs/agentview_depth
+data/demo_8/obs/agentview_pointcloud_full
+data/demo_8/obs/agentview_rgb
+data/demo_8/obs/hand_mat
+data/demo_8/obs/hand_mat_inv
+data/demo_8/obs/robot0_eef_pos
+data/demo_8/obs/robot0_eye_in_hand_depth
+data/demo_8/obs/robot0_eye_in_hand_pointcloud_full | (212, 128, 128, 3)
+data/demo_8/obs/robot0_eye_in_hand_rgb
+data/demo_8/obs/robot0_gripper_qpos
+data/demo_8/obs/robot0_joint_pos
+data/demo_8/reward
+data/demo_8/states
+data/demo_8/success
+data/demo_8/terminated
+data/demo_8/truncated
+
+
+"""
+
+
 compress_keys = {
     'robot0_eye_in_hand_pointcloud_full', 
     'agentview_pointcloud_full'
