@@ -65,7 +65,8 @@ class Benchmark(abc.ABC):
             0 <= i and i < self.n_tasks
         ), f"[error] task number {i} is outer of range {self.n_tasks}"
         # this path is relative to the datasets folder
-        demo_path = f"{self.tasks[i].problem_folder}/{self.tasks[i].name}_demo.hdf5"
+        # demo_path = f"{self.tasks[i].problem_folder}/{self.tasks[i].name}_demo.hdf5"
+        demo_path = f"libero_90_processed/{self.tasks[i].name}_demo.hdf5"
         return demo_path
 
     def get_task(self, i):

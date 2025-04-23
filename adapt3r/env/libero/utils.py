@@ -130,11 +130,8 @@ def build_dataset(data_prefix,
     print(data_prefix, "libero_90_processed")
     for i in trange(n_tasks):
         task_i_dataset = get_dataset(
-            # dataset_path=os.path.join(
-            #     data_prefix, suite_name, benchmark.get_task_demonstration(i)
-            # ),
             dataset_path=os.path.join(
-                data_prefix, "libero_90_processed", benchmark.get_task_demonstration(i)
+                data_prefix, suite_name, benchmark.get_task_demonstration(i)
             ),
             obs_modality=obs_modality,
             seq_len=seq_len,
