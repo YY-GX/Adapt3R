@@ -127,7 +127,7 @@ def build_dataset(data_prefix,
             obs_modality[key] = obs_modality[key] + extra_obs_modality[key]
     
     ObsUtils.initialize_obs_utils_with_obs_specs({"obs": obs_modality})
-    print(data_prefix, "libero_90_processed")
+    # print(data_prefix, "libero_90_processed")
     for i in trange(n_tasks):
         task_i_dataset = get_dataset(
             dataset_path=os.path.join(
