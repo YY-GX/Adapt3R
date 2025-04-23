@@ -7,7 +7,7 @@ import json
 
 from typing import List, NamedTuple, Type
 from libero.libero import get_libero_path
-from libero.libero.benchmark.libero_suite_task_map import boss_task_map
+from libero.libero.benchmark.libero_suite_task_map import libero_task_map
 
 """
 Create global vars
@@ -31,7 +31,7 @@ class Benchmark(abc.ABC):
         if self.name in eval_ori_suites:
             tasks = sorted(tasks, key=lambda item: item.name)
 
-        print(f"[INFO] Task indexes in current set: {self.task_indexes}")
+        print(f"[IMPORTANT INFO] Task indexes in current set: {self.task_indexes}")
         self.tasks = [tasks[i] for i in self.task_indexes]
 
         if self.n_tasks:
@@ -310,7 +310,7 @@ keep_language_unchanged = True
 for boss_suite in boss_suites:
     task_maps[boss_suite] = {}
 
-    for task in boss_task_map[boss_suite]:
+    for task in libero_task_map[boss_suite]:
         if (boss_suite == "boss_44") or (boss_suite == "libero_90"):
             # keep language unchanged - extract language directly based on bddl file name
             language = grab_language_from_filename(task + ".bddl", is_modified=False)
