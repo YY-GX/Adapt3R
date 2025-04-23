@@ -7,7 +7,7 @@ import json
 
 from typing import List, NamedTuple, Type
 from libero.libero import get_libero_path
-from libero.libero.benchmark.boss_task_map import boss_task_map
+from libero.libero.benchmark.libero_suite_task_map import boss_task_map
 
 """
 Create global vars
