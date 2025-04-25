@@ -48,7 +48,7 @@ rollout:
   interval: 25
   rollouts_per_env: 1
   max_episode_length: ${task.horizon}
-  n_video: 0
+  n_video: 1  # yy: ori: 0
   num_parallel_envs: 1
 
 
