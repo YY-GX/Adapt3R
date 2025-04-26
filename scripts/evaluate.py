@@ -13,6 +13,13 @@ from pyinstrument import Profiler
 from moviepy import ImageSequenceClip
 import json
 
+
+# yy: I added this to adapt to author ckpt
+import sys
+import adapt3r as quest  # adapt3r is your new package
+sys.modules['quest'] = quest
+
+
 OmegaConf.register_new_resolver("eval", eval, replace=True)
 
 
