@@ -222,7 +222,7 @@ class ChunkPolicy(Policy):
             with torch.no_grad():
                 actions = self.sample_actions(batch)
                 actions = self.normalizer.unnormalize({self.action_key: actions})[self.action_key]
-                actions = np.transpose(actions, (1, 0, 2).cpu().numpy())
+                actions = np.transpose(actions.cpu().numpy(), (1, 0, 2))
                 self.action_queue.extend(actions[: self.action_horizon])
         action = self.action_queue.popleft()
         return action
