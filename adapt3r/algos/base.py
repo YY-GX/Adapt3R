@@ -140,7 +140,8 @@ class ChunkPolicy(Policy):
     Super class for policies which predict chunks of actions
     """
 
-    def __init__(self, action_horizon, chunk_size, temporal_agg=False, **kwargs):
+    # yy: chunk_size set to 8 as default
+    def __init__(self, action_horizon, chunk_size=8, temporal_agg=False, **kwargs):
         super().__init__(**kwargs)
 
         self.action_horizon = action_horizon
