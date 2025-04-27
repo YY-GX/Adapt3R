@@ -72,7 +72,8 @@ def main(cfg):
         os.makedirs(video_dir, exist_ok=True)
         save_path = os.path.join(video_dir, f'{idx}.mp4')
         clip = ImageSequenceClip(list(video_chw.transpose(0, 2, 3, 1)), fps=24)
-        clip.write_videofile(save_path, fps=24, verbose=False, logger=None)
+        # clip.write_videofile(save_path, fps=24, verbose=False, logger=None)
+        clip.write_videofile(save_path, fps=24, logger=None)
 
     if train_cfg.do_profile:
         profiler = Profiler()
