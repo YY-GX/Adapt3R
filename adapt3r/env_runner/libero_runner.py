@@ -7,6 +7,7 @@ from tqdm import tqdm, trange
 import multiprocessing
 import os
 import json
+import torch
 
 class LiberoRunner():
     def __init__(self,
