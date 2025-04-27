@@ -175,6 +175,9 @@ class LiberoRunner():
             action = policy(obs, task_id, task_emb)
             # TODO: fix bounds in the lib env and then uncomment
             # action = np.clip(action, env.action_space.low, env.action_space.high)
+            # yy: I add this
+            if isinstance(action, torch.Tensor):
+                action = action.detach().cpu().numpy()
             next_obs, reward, terminated, truncated, info = env.step(action)
             total_reward += reward
             obs = next_obs
