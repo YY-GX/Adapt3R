@@ -121,6 +121,8 @@ class Policy(nn.Module, ABC):
 
     def postprocess_action(self, action):
         if self.abs_action:
+            if isinstance(action, np.ndarray):
+                action = torch.from_numpy(action)
             pos, rot_raw, gripper = torch.split(action, [3, action.shape[-1] - 4, 1], dim=-1)
             rot = self.rotation_transformer.inverse(rot_raw)
             action = torch.cat([pos, rot, gripper], dim=-1)
@@ -222,7 +224,9 @@ class ChunkPolicy(Policy):
             with torch.no_grad():
                 actions = self.sample_actions(batch)
                 actions = self.normalizer.unnormalize({self.action_key: actions})[self.action_key]
-                actions = np.transpose(actions.cpu().numpy(), (1, 0, 2))
+                if isinstance(actions, torch.Tensor):
+                    actions = actions.cpu().numpy()
+                actions = np.transpose(actions, (1, 0, 2))
                 self.action_queue.extend(actions[: self.action_horizon])
         action = self.action_queue.popleft()
         return action
