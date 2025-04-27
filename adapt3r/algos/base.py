@@ -226,7 +226,8 @@ class ChunkPolicy(Policy):
                 actions = self.normalizer.unnormalize({self.action_key: actions})[self.action_key]
 
                 if isinstance(actions, torch.Tensor):
-                    actions = actions.permute(1, 0, 2)  # Tensor version of transpose
+                    actions = actions.permute(1, 0, 2)
+                    actions = actions.detach().cpu().numpy()
                 else:
                     actions = np.transpose(actions, (1, 0, 2))
 
