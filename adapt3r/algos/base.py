@@ -224,9 +224,12 @@ class ChunkPolicy(Policy):
             with torch.no_grad():
                 actions = self.sample_actions(batch)
                 actions = self.normalizer.unnormalize({self.action_key: actions})[self.action_key]
+
                 if isinstance(actions, torch.Tensor):
-                    actions = actions.cpu().numpy()
-                actions = np.transpose(actions, (1, 0, 2))
+                    actions = actions.permute(1, 0, 2)  # Tensor version of transpose
+                else:
+                    actions = np.transpose(actions, (1, 0, 2))
+
                 self.action_queue.extend(actions[: self.action_horizon])
         action = self.action_queue.popleft()
         return action
