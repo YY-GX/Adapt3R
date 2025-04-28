@@ -392,7 +392,7 @@ Created Tasks Indexes
 """
 selected_task_indexes = {
     "boss_44": [i for i in range(0, 44)],
-    "ch1": [i for i in range(7, 44)],  # TODO: revise this
+    "ch1": [i for i in range(0, 44)],
     "ch2_2_modifications": [i for i in range(0, 44)],
     "ch2_3_modifications": [i for i in range(0, 44)],
     "ch3_1": [2, 3, 5],
