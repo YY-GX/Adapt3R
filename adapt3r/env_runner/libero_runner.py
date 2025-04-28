@@ -60,6 +60,7 @@ class LiberoRunner():
                 'per_env_rewards': {},
             }
         videos = {}
+        # succ_ls = []
         for env_name in tqdm(env_names, disable=not do_tqdm):
             if env_name in progress['per_env_success_rates']:
                 continue
@@ -88,6 +89,9 @@ class LiberoRunner():
             progress['per_env_success_rates'][env_name] = np.mean(env_succs)
             progress['per_env_rewards'][env_name] = np.mean(env_rews)
             progress['per_env_any_success'].append(bool(any_success))
+
+            # succ_ls.append(np.mean(env_rews))
+            # np.save(os.path.join(save_dir, "succ_ls.npy"), np.array(succ_ls))
 
             if len(env_video) > 0:
                 video_hwc = np.array(env_video)
