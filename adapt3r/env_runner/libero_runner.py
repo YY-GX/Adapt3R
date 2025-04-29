@@ -71,6 +71,7 @@ class LiberoRunner():
 
         for env_name in tqdm(env_names, disable=not do_tqdm):
             if env_name in progress['per_env_success_rates']:
+                print(f"[INFO] JUMP env {env_name}!")
                 continue
 
             any_success = False
