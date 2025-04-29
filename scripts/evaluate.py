@@ -83,7 +83,9 @@ def main(cfg):
                                      do_tqdm=train_cfg.use_tqdm, 
                                      save_video_fn=save_video_fn,
                                      save_dir=save_dir,
-                                     fault_tolerant=False)
+                                     fault_tolerant=False,
+                                     # benchmark_name=cfg.task.benchmark_name
+                                     )  # yy: I added this line
     if train_cfg.do_profile:
         profiler.stop()
         profiler.print()

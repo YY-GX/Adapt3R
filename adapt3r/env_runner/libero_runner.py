@@ -44,7 +44,9 @@ class LiberoRunner():
             save_video_fn=None, 
             save_dir=None, 
             env_names=None,
-            fault_tolerant=False):
+            fault_tolerant=False,
+            # benchmark_name=None
+            ):
         if env_names is None:
             env_names = self.env_names
         if save_dir is not None and os.path.exists(os.path.join(save_dir, 'progress.json')):
@@ -61,6 +63,12 @@ class LiberoRunner():
             }
         videos = {}
         # succ_ls = []
+        # print(f">> Benchmark Name: {benchmark_name}")
+        # if benchmark_name == "ch1":
+        #     env_names = env_names[27:]
+        # else:
+        #     env_names = env_names[30:]
+
         for env_name in tqdm(env_names, disable=not do_tqdm):
             if env_name in progress['per_env_success_rates']:
                 continue
