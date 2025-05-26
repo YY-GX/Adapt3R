@@ -61,7 +61,7 @@ def dump_demo(demo, file_path, demo_i, attrs=None):
                 group.attrs[key] = attrs[key]
 
         demo_length = len(demo['actions'])
-        group_data.attrs['total'] = group_data.attrs['total'] + demo_length
+        # group_data.attrs['total'] = group_data.attrs['total'] + demo_length
         group.attrs['num_samples'] = demo_length
         non_obs_keys = ('actions', 'abs_actions', 'terminated', 'truncated', 'reward', 'success')
         group.create_dataset('states', data=())
