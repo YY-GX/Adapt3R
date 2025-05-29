@@ -137,7 +137,7 @@ def process_task_dataset(task_no, source_h5_path, dest_h5_path, benchmark, env_f
 
 @hydra.main(config_path="../config", config_name='collect_data', version_base=None)
 def main(cfg):
-    is_debug = True
+    is_debug = False
 
     source_dir = os.path.join(cfg.data_prefix, cfg.task.suite_name, cfg.task.benchmark_name + '_unprocessed')
     save_dir = os.path.join(cfg.data_prefix, cfg.task.suite_name, cfg.task.benchmark_name + '_processed')
