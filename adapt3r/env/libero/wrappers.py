@@ -134,6 +134,7 @@ class LiberoWrapper(gymnasium.Env):
                  device="cuda",):
         self.img_width = img_width
         self.img_height = img_height
+        print("*****", self.img_width, self.img_height)
         self.hd_rendering = hd_rendering
         obs_meta = shape_meta['observation']
         self.rgb_outputs = list(obs_meta['rgb']) if not skip_render else []
