@@ -127,7 +127,7 @@ def process_task_dataset(task_no, source_h5_path, dest_h5_path, benchmark, env_f
         else:
             already_processed = len(set(f['data']))
 
-    env = env_factory(task_id=task_no, benchmark=benchmark)
+    env = env_factory(task_id=task_no, benchmark=benchmark, img_height=256, img_width=256)
 
     for idx in trange(already_processed, len(demo_keys), disable=0):
         demo_k = demo_keys[idx]
