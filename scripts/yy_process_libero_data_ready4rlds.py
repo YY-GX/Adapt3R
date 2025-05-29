@@ -151,7 +151,7 @@ def main(cfg):
     env_factory = instantiate(cfg.task.env_factory)
 
     if is_debug:
-        debug_file = "KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet_and_put_the_black_bowl_on_top_of_it_demo.hdf5"
+        debug_file = "KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet_demo.hdf5"
         print(f"[DEBUG MODE] Only processing: {debug_file}")
         source_h5_path = os.path.join(source_dir, debug_file)
         dest_h5_path = os.path.join(save_dir, debug_file)
