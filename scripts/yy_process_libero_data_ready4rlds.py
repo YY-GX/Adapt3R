@@ -9,6 +9,7 @@ import adapt3r.utils.pytorch3d_transforms as pt
 import torch
 import adapt3r.env.libero.utils as lu
 from hydra.utils import instantiate
+import robosuite.utils.transform_utils as T
 
 
 compress_keys = {
