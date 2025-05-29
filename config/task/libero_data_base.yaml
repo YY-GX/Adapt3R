@@ -28,6 +28,7 @@ shape_meta:
       robot0_joint_pos: 7
       robot0_eef_pos: 3
       robot0_gripper_qpos: 2
+      robot0_eef_quat: 4  # yy: 👈 Add this
     pointcloud: 
       hand_pointcloud: 
         - ${task.num_pc_points}
